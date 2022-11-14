@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wakatipu Boat Adventure</title>
+    <!--jQuery CDN Link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!--Bootsrap CDN Link-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!--Owl Carousel-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--Howler CDN Link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js
+    "></script>
+    <!--Font awesome link-->
+    <script
+      src="https://kit.fontawesome.com/41f900d546.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--index.css link-->
+    <link rel="stylesheet" href="css/index.css" />
+    <!--internal CSS-->
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+
+  <body>
+    <!-- Navigation-->
+    <nav class="navbar container-fluid navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/linear.png" alt="business logo" id="logoImg" />
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bookSeat.html">Book a Seat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="game.html">Play a Game</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              >Website Design Plans</a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="plans/HomePage_Wireframe.pdf"
+                  >Homepage Wireframe</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Part 1</a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="plans/BookaBoat_Wireframe.pdf"
+                      >Wireframe</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="plans/TestCasesBooking.pdf"
+                      >Test Plans</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Part 2</a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="plans/PlayaGame_Wireframe.pdf"
+                      >Wireframe</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="plans/Game_Storyboard.pdf"
+                      >Storyboard</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="plans/TestCasesGame.pdf"
+                      >Test Plans</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#emailContact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <div class="canvasDiv container d-flex flex-column position-relative">
+      <canvas id="myCanvas" height="600px" width="800px"
+        >Error. Your Browser does not support Canvas</canvas
+      >
+      <div class="buttonContainer">
+        <button
+          type="button"
+          class="btn shadow btn-primary btnPlay position-absolute"
+        >
+          START GAME
+        </button>
+        <button
+          type="button"
+          class="btn hide shadow btn-primary btnRestart position-absolute"
+        >
+          RESTART
+        </button>
+        <div class="btn shadow btnSelectTime position-absolute">
+          <select class="form-select comboBoxDesign" id="timeInput" required>
+            <option value="60000">1 MIN</option>
+            <option value="180000">3 MIN</option>
+            <option value="240000" selected>4 MIN</option>
+            <option value="300000">5 MIN</option>
+          </select>
+        </div>
+      </div>
+      <div class="boxControls d-flex justify-content-between">
+        <div class="musicControls">
+          <button class="btnMusic onMusic onDisplay">
+            <i class="fa-solid fa-music"> MUSIC ON </i>
+          </button>
+          <button class="btnMusic offMusic d-none offDisplay">
+            <i class="fa-solid fa-music"> MUSIC OFF </i>
+          </button>
+        </div>
+        <div class="userInstruction">
+          <p class="m-2">🐞 Press SPACEBAR to catch bugs</p>
+          <p class="m-2">🧸 Move with arrow keys</p>
+        </div>
+        <div class="audioControlDiv">
+          <div class="d-flex">
+            <span class="mx-2 ms-4"
+              ><i class="fa-solid fa-volume-low"></i
+            ></span>
+            <div class="slidecontainer">
+              <input
+                type="range"
+                min="10"
+                max="100"
+                value="50"
+                step="10"
+                class="slider"
+                id="audio"
+              />
+            </div>
+            <span class="mx-2"><i class="fa-solid fa-volume-high"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/gameV2.js"></script>
+    <!--Footer-->
+    <footer class="container-fluid footer">
+      <div class="callMediaDiv container">
+        <div class="callDiv">
+          <div class="container mt-5">
+            <div class="d-flex justify-content-between">
+              <h2 class="callHeading">CALL US</h2>
+              <div class="mediaDiv">
+                <div class="mediaIcon">
+                  <i class="fa-brands fa-facebook"></i
+                  ><i class="fa-brands fa-square-twitter"></i
+                  ><i class="fa-brands fa-square-instagram"></i>
+                </div>
+              </div>
+            </div>
+            <div class="phoneDiv">
+              <h3 class="callHeading">555-823</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="container emailDiv mt-4">
+          <p id="emailContact" class="footerText">
+            Email: wtAdventure@gmail.com
+          </p>
+          <p class="footerText">
+            Address: <br />
+            290A Fernhill Road, Sunshine Bay, Queenstown 9300
+          </p>
+        </div>
+      </div>
+      <div class="container d-flex justify-content-end copyRightDiv">
+        <p>wtAdventure Ⓒ 2022</p>
+      </div>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>

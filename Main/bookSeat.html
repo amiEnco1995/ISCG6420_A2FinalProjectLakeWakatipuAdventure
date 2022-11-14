@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wakatipu Boat Adventure</title>
+    <!--jQuery CDN Link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!--Bootsrap CDN Link-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!--Owl Carousel-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--Font awesome link-->
+    <script
+      src="https://kit.fontawesome.com/41f900d546.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--index.css link-->
+    <link rel="stylesheet" href="css/index.css" />
+    <!--bookSeat.css link-->
+    <link rel="stylesheet" href="css/bookSeat.css" />
+  </head>
+
+  <body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/linear.png" alt="business logo" id="logoImg" />
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bookSeat.html">Book a Seat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="game.html">Play a Game</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              >Website Design Plans</a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="plans/HomePage_Wireframe.pdf"
+                  >Homepage Wireframe</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Part 1</a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="plans/BookaBoat_Wireframe.pdf"
+                      >Wireframe</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="plans/TestCasesBooking.pdf">Test Plans</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Part 2</a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="plans/PlayaGame_Wireframe.pdf"
+                      >Wireframe</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="plans/Game_Storyboard.pdf"
+                      >Storyboard</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="plans/TestCasesGame.pdf"
+                      >Test Plans</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#emailContact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <section class="mainContainer container-fluid d-flex">
+      <section class="leftContainer container d-flex justify-content-center">
+        <div
+          class="container d-none loadingLeftMain d-flex justify-content-center"
+        >
+          <div class="spinner-border text-secondary" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+        <section class="weatherContainer subSec">
+          <div class="wTitleDiv d-flex">
+            <h2 class="wtitle">Queenstown</h2>
+            <h4 class="textW" id="tdayText">Today: DD/MM/YYYY</h4>
+          </div>
+          <div class="wTopDiv d-flex justify-content-between">
+            <div class="wTopLeftDiv">
+              <h2 class="tempText" id="todayTemp">17 C</h2>
+              <p class="tempText" id="todayWeather">Clouds</p>
+              <div class="textWindHumidity d-flex">
+                <p id="todayWindSpeed">Wind Speed:</p>
+                <p id="todayHumidity">Humidity:</p>
+              </div>
+            </div>
+            <div class="wTopRightDiv">
+              <img src="#" alt="today weather" id="todayWImage" />
+            </div>
+          </div>
+          <div class="wBottomDiv d-flex flex-column">
+            <div class="fourDaysDiv d-flex">
+              <h2 class="fourDaysTitle">The Next 4 Days</h2>
+            </div>
+            <div class="daysDiv container-fluid">
+              <div class="dayDiv row align-items-center">
+                <div class="dayDivSub col d-flex justify-content-center">
+                  <h2 id="day1" class="daysOfWeekText">Mon</h2>
+                </div>
+                <div class="weatherImgDiv col d-flex justify-content-center">
+                  <img
+                    class="weatherImg"
+                    id="day1Img"
+                    src="#"
+                    alt="day 1 weather image"
+                  />
+                </div>
+                <div class="textDailyTempDiv col d-flex justify-content-center">
+                  <h3 id="day1Temp" class="tempOfDayText">17 C</h3>
+                </div>
+              </div>
+              <div class="dayDiv row align-items-center">
+                <div class="dayDivSub col d-flex justify-content-center">
+                  <h2 id="day2" class="daysOfWeekText">Mon</h2>
+                </div>
+                <div class="weatherImgDiv col d-flex justify-content-center">
+                  <img
+                    class="weatherImg"
+                    id="day2Img"
+                    src="#"
+                    alt="day 2 weather image"
+                  />
+                </div>
+                <div class="textDailyTempDiv col d-flex justify-content-center">
+                  <h3 id="day2Temp" class="tempOfDayText">17 C</h3>
+                </div>
+              </div>
+              <div class="dayDiv row align-items-center">
+                <div class="dayDivSub col d-flex justify-content-center">
+                  <h2 id="day3" class="daysOfWeekText">Mon</h2>
+                </div>
+                <div class="weatherImgDiv col d-flex justify-content-center">
+                  <img
+                    class="weatherImg"
+                    id="day3Img"
+                    src="#"
+                    alt="day 3 weather image"
+                  />
+                </div>
+                <div class="textDailyTempDiv col d-flex justify-content-center">
+                  <h3 id="day3Temp" class="tempOfDayText">17 C</h3>
+                </div>
+              </div>
+              <div class="dayDiv row align-items-center">
+                <div class="dayDivSub col d-flex justify-content-center">
+                  <h2 id="day4" class="daysOfWeekText">Mon</h2>
+                </div>
+                <div class="weatherImgDiv col d-flex justify-content-center">
+                  <img
+                    class="weatherImg"
+                    id="day4Img"
+                    src="#"
+                    alt="day 4 weather image "
+                  />
+                </div>
+                <div class="textDailyTempDiv col d-flex justify-content-center">
+                  <h3 id="day4Temp" class="tempOfDayText">17 C</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="menuContainer d-none d-flex flex-column subSec">
+          <div class="menutitleDiv">
+            <h2 class="menuTitleText">Menu</h2>
+          </div>
+          <div class="menuDiv container" id="menuDivID">
+            <table class="menuTable" id="menuTableID"></table>
+          </div>
+        </section>
+        <section class="finalImgContainer d-none subSec">
+          <div class="finalImgDiv">
+            <img
+              id="finalImg"
+              src="images/frontBoat.jpg"
+              alt="boat image on the ocean"
+            />
+          </div>
+        </section>
+      </section>
+      <section class="rightContainer container">
+        <section class="bookingPg bookingPg1 subSec">
+          <div class="bookingTitle">Book a Seat</div>
+          <div class="content contentPg1">
+            <div class="pg1DivDate">
+              <label for="dateChoice" class="lblText">Choose a day:</label>
+              <input type="date" id="dateChoice" required/>
+            </div>
+            <div class="pg1DivTime ">
+              <label for="timeChoice" class="lblText">Choose a time:</label>
+              <select
+                class="timeComboBox"
+                id="timeChoice"
+                name="timeChoice"
+                required
+              >
+                <option value="10AM" selected>10 AM</option>
+                <option value="2PM">2 PM</option>
+              </select>
+            </div>
+            <div class="adviceDiv">
+              <h3 id="wAdvice">The weather today is: favorable</h3>
+            </div>
+            <div class="adviceBtnDiv d-flex justify-content-center">
+              <button type="button" id="btnAdvice_Next">Start Booking</button>
+            </div>
+          </div>
+        </section>
+        <section class="contactContainer d-none bookingPg bookingPg2 subSec">
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 20%"
+            >
+              20%
+            </div>
+          </div>
+          <div class="contactTitleDiv d-flex justify-content-start">
+            <h2 class="contactTitle">Contact Details</h2>
+          </div>
+          
+            <div class="contactDetailsDiv container">
+              <div class="contactText firstNameDiv  row">
+                <label class="col" for="firstName">First Name:</label>
+                <input
+                  id="firstNameID"
+                  type="text"
+                  maxlength="40"
+                  required
+                  name="firstName"
+                  class="col"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="contactText lastNameDiv  row">
+                <label  class="col" for="lastName ">Last Name:</label>
+                <input
+                  type="text"
+                  required
+                  maxlength="40"
+                  name="lastName"
+                  id="lastNameID"
+                  class="col"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="contactText mobileDiv row">
+                <label class="col" for="mobile">Mobile Phone:</label>
+                <input
+                  type="text"
+                  required
+                  minlength="8"
+                  maxlength="12"
+                  name="mobile"
+                  id="mobileID"
+                  class="col"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="contactText emailDiv row">
+                <label class="col" for="email">Email Address:</label>
+                <input type="email" required autocomplete="off" maxlength="80" name="email" id="emailID" class="col"/>
+              </div>
+            </div>
+          
+          </div>
+          <div class="contactTitleDiv2 d-flex justify-content-start">
+            <h2 class="contactTitle">Booking Details</h2>
+          </div>
+          <div class="contactDetailsDiv d-flex flex-column container">
+            <div class="contactText dateTripDiv row">
+              <p class="col">Date of Trip:</p>
+              <p class="col" id="dateTripID">DD/MM/YYYY</p>
+            </div>
+            <div class="contactText timeChoiceDiv row">
+              <p class="col">Time:</p>
+              <p class="col" id="timeChoiceID">10AM</p>
+            </div>
+            <div class="contactText row passengersDiv ">
+              <label class="col" for="cboPassengers">Select Number of Passengers:</label>
+             <div class="col"> 
+              <input
+                type="number"
+                required
+                min="1"
+                max="88"
+                name="passengerCount"
+                id="passengerID"
+              
+              />
+            </div>
+            </div>
+          </div>
+          <div class="buttonsDiv d-flex justify-content-between">
+            <div class="btnPrevDiv">
+              <button class="button" id="btnPrevPg2">Previous</button>
+            </div>
+            <div class="btnNextDiv">
+              <button class="button" id="btnNextPg2">Next</button>
+            </div>
+          </div>
+        </section>
+        <section class="chooseBoatContainer d-none bookingPg3 subSec">
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 40%"
+            >
+              40%
+            </div>
+          </div>
+            <div class="chooseTitle">
+              Choose a Boat
+            </div>
+            <div class="container d-flex  boatChoicesDiv">
+              <div class="tereDiv boatChoice">
+                <div class="boatTextDiv">
+                  <h2 class="boatName">Tere</h2>
+                  <p class="capacityText">Capacity: 64 passengers</p>
+                </div>
+                <div class="tereDiv boatImgChoiceDiv">
+                  <img id="tereImage" src="images/boatTere_v4.jpg" alt="tere boat image">
+                </div>
+              </div>
+              <div class="nuiDiv boatChoice">
+                <div class="boatTextDiv">
+                  <h2 class="boatName">Nui</h2>
+                  <p class="capacityText">Capacity: 88 passengers</p>
+                </div>
+                <div class="boatImgChoiceDiv">
+                  <img id="nuiImage" src="images/boatNui_v5.jpg" alt="nui boat image">
+                </div>
+              </div>
+            </div>
+            <div class="buttonsDiv d-flex justify-content-between">
+              <div class="btnPrevDiv">
+                <button class="button" id="btnPrevPg3">Previous</button>
+              </div>
+              <div class="btnNextDiv">
+                <button class="button" id="btnNextPg3">Next</button>
+              </div>
+            </div>
+        </section>
+        <section class="nuiContainer d-none bookingPg subSec">
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 60%"
+            >
+              60%
+            </div>
+          </div>
+          <div class="chooseSeatTitleDiv">
+            <h2 class="chooseSeatTitle">Choose Your Seats</h2>
+          </div>
+          <div class="boatInfoDiv">
+            <div class="boatInfoSubDiv">
+              <div class="boatTitleDiv">
+                <h2 class="boatTitleText">Nui</h2>
+              </div>
+              <div class="boatSubInfoDiv">
+                <p class="boatInfoText">Capacity: 88 passengers</p>
+              </div>
+            </div>
+            <div class="boatInfoSubDiv">
+              <div class="boatSubInfoDiv">
+                <p class="boatInfoText">Number of Passengers: <span id="passengerCountNui">2</span></p>
+              </div>
+              <div class="boatSubInfoDiv">
+                <p class="boatInfoText">Key: <span class="availableSpan key">Available</span><span class="selectedSpan key">Selected</span><span class="takenSpan key">Taken</span></p>
+        
+              </div>
+            </div>
+          </div>
+          <div class="nuiAllBoat">
+            <section class="nuiSectionLeft">
+              <table class="boatLeftTable nuiTable">
+                <tr class="rowB" id="AN"></tr>
+                <tr class="rowB" id="BN"></tr>
+                <tr class="rowB" id="CN"></tr>
+                <tr class="rowB" id="DN"></tr>
+                <tr class="rowB" id="EN"></tr>
+                <tr class="rowB" id="FN"></tr>
+                <tr class="rowB" id="GN"></tr>
+                <tr class="rowB" id="HN"></tr>
+                <tr class="rowB" id="IN"></tr>
+                <tr class="rowB" id="JN"></tr>
+                <tr class="rowB" id="KN"></tr>
+                <tr class="rowB" id="LN"></tr>
+                <tr class="rowB" id="MN"></tr>
+              </table> 
+            </section>
+          </div>
+          <div class="buttonsDiv d-flex justify-content-between">
+            <div class="btnPrevDiv">
+              <button class="button" id="btnPrevPgNui">Previous</button>
+            </div>
+            <div class="btnNextDiv">
+              <button class="button" id="btnNextPgNui">Next</button>
+            </div>
+          </div>
+        </section>
+        <section class="tereContainer d-none bookingPg subSec">
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 60%"
+            >
+              60%
+            </div>
+          </div>
+          <div class="chooseSeatTitleDiv">
+            <h2 class="chooseSeatTitle">Choose Your Seats</h2>
+          </div>
+          <div class="boatInfoDiv">
+            <div class="boatInfoSubDiv">
+              <div class="boatTitleDiv">
+                <h2 class="boatTitleText">Tere</h2>
+              </div>
+              <div class="boatSubInfoDiv">
+                <p class="boatInfoText">Capacity: 64 passengers</p>
+              </div>
+            </div>
+            <div class="boatInfoSubDiv">
+              <div class="boatSubInfoDiv">
+                <p class="boatInfoText">Number of Passengers: <span id="passengerCountTere">2</span></p>
+              </div>
+              <div class="boatSubInfoDiv">
+                <p class="boatInfoText">Key: <span class="availableSpan key">Available</span><span class="selectedSpan key">Selected</span><span class="takenSpan key">Taken</span></p>
+              </div>
+            </div>
+          </div>
+          <section class="tereAllBoat">
+            <section class="tereSectionLeft">
+              <table class="boatLeftTable tereTable">
+                <tr class="rowB" id="A"></tr>
+                <tr class="rowB" id="B"></tr>
+                <tr class="rowB" id="C"></tr>
+                <tr class="rowB" id="D"></tr>
+                <tr class="rowB" id="E"></tr>
+                <tr class="rowB" id="F"></tr>
+                <tr class="rowB" id="G"></tr>
+                <tr class="rowB" id="H"></tr>
+                <tr class="rowB" id="I"></tr>
+              </table>
+            </section>
+          </section>
+          <div class="buttonsDiv d-flex justify-content-between">
+            <div class="btnPrevDiv">
+              <button class="button" id="btnPrevPgTere">Previous</button>
+            </div>
+            <div class="btnNextDiv">
+              <button class="button" id="btnNextPgTere">Next</button>
+            </div>
+          </div>
+        </section>
+        <section class="mealContainer d-none bookingPg subSec">
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 80%"
+            >
+              80%
+            </div>
+          </div>
+          <div class="ordersTitleDiv">
+            <h2 class="ordersTitle">Choose a Meal</h2>
+          </div>
+          <section class="mealSelection">
+            <div class="order" id="orderID">
+              <div class="menuDesign"></div>
+              <table class="menuPassengerTable table">
+                <tbody>
+                  <tr class="savouryRow">
+                    <td class="mpTitleContainer">
+                      <h4 class="menuSubTitles">Savoury</h4>
+                    </td>
+                    <td>
+                      <p class="mpText">Chicken Sandwich</p>
+                    </td>
+                    <td>
+                      <label for="chickenQty" class="menuLabel">Qty: </label>
+                      <input
+                        type="number"
+                        id="chickenQty"
+                        class="menuNumPick"
+                        default="0"
+                        min="0"
+                        max="20"
+                      />
+                    </td>
+                    <td>
+                      <p class="mpText">Quiche</p>
+                    </td>
+                    <td>
+                      <label for="quicheQty" class="menuLabel">Qty: </label>
+                      <input
+                        type="number"
+                        id="quicheQty"
+                        class="menuNumPick"
+                        default="0"
+                        min="0"
+                        max="20"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="dessertRow menuRow">
+                    <td class="mpTitleContainer">
+                      <h4 class="menuSubTitles">Dessert</h4>
+                    </td>
+                    <td>
+                      <p class="mpText">Coconut Cake</p>
+                    </td>
+                    <td>
+                      <label for="cakeQty" class="menuLabel">Qty: </label>
+                      <input
+                        type="number"
+                        id="cakeQty"
+                        class="menuNumPick"
+                        default="0"
+                        min="0"
+                        max="20"
+                      />
+                    </td>
+                    <td>
+                      <p class="mpText">Vanilla Ice Cream</p>
+                    </td>
+                    <td>
+                      <label for="iceCreamQty" class="menuLabel">Qty: </label>
+                      <input
+                        type="number"
+                        id="iceCreamQty"
+                        class="menuNumPick"
+                        default="0"
+                        min="0"
+                        max="20"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="drinksRow menuRow">
+                    <td class="mpTitleContainer">
+                      <h4 class="menuSubTitles">Drinks</h4>
+                    </td>
+                    <td>
+                      <p class="mpText">Orange Juice</p>
+                    </td>
+                    <td>
+                      <label for="juiceQty" class="menuLabel">Qty: </label>
+                      <input
+                        type="number"
+                        id="juiceQty"
+                        class="menuNumPick"
+                        default="0"
+                        min="0"
+                        max="20"
+                      />
+                    </td>
+                    <td>
+                      <p class="mpText">Coffee</p>
+                    </td>
+                    <td>
+                      <label for="coffeeQty" class="menuLabel">Qty: </label>
+                      <input
+                        type="number"
+                        id="coffeeQty"
+                        class="menuNumPick"
+                        default="0"
+                        min="0"
+                        max="20"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="menuPassengerFooter">
+                    <td colspan="3"></td>
+                    <td><p class="mpText2">Total Price:</p></td>
+                    <td>
+                      <p class="mpText">
+                        <span id="orderTotalPrice">$ 0.00</span>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="buttonsDiv buttonsDivMenuPg d-flex justify-content-between">
+              <div class="btnPrevDiv">
+                <button class="button" id="btnPrevPg5">Previous</button>
+              </div>
+              <div class="btnNextDiv">
+                <button class="button" id="btnNextPg5">Next</button>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="summaryContainer d-none  bookingPg subSec">
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 100%"
+            >
+              100%
+            </div>
+          </div>
+          <div class="bookingAllContainer">
+            <div class="bookingSumTitleDiv">
+              <div class="bookingSumTitleSubDiv">
+                <h2 class="bookingSumTitleText">Booking Summary</h2>
+              </div>
+            </div>
+            <div class="contactDAllDiv bkSubDiv">
+              <div class="contactDTitleSubDiv">
+                <h2 class="contactDitleText bookingSumSubTitle">Contact Details</h2>
+              </div>
+              <div class="contactDAllInfoSubDiv container">
+                <div class="row bkFNDiv">
+                  <div class="col-4 bkFNSubDiv">
+                    <h4 class="bkLabel">First Name: </h4>
+                  </div>
+                  <div class="col-8 bkFNSubDiv">
+                    <p id="bkFirstNameID">Jane</p>
+                  </div>
+                </div>
+                <div class="row bkLNDiv">
+                  <div class="col-4 bkLNSubDiv">
+                    <h4 class="bkLabel">Last Name: </h4>
+                  </div>
+                  <div class="col-8 bkLNSubDiv">
+                    <p id="bkLastNameID">Jones</p>
+                  </div>
+                </div>
+                <div class="row bkMobileDiv">
+                  <div class="col-4 bkMobileSubDiv">
+                    <h4 class="bkLabel">Mobile Phone: </h4>
+                  </div>
+                  <div class="col-8 bkMobileSubDiv">
+                    <p id="bkMobileID">021-234567</p>
+                  </div>
+                </div>
+                <div class="row bkEmailDiv">
+                  <div class="col-4 bkEmailSubDiv">
+                    <h4 class="bkLabel">Email Address: </h4>
+                  </div>
+                  <div class="col-8 bkEmailSubDiv">
+                    <p id="bkEmailID">jjones@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookDAllDiv bkSubDiv">
+              <div class="bookDTitleSubDiv">
+                <h2 class="bookDTitleText bookingSumSubTitle">Booking Details</h2>
+              </div>
+              <div class="bookDAllInfoSubDiv container">
+                <div class="row bkDateTripDiv">
+                  <div class="col-4 bkDateTripSubDiv">
+                    <h4 class="bkLabel">Date of Trip: </h4>
+                  </div>
+                  <div class="col-8 bkDateTripSubDiv">
+                    <p id="bkDateTripID">3/11/2022</p>
+                  </div>
+                </div>
+                <div class="row bkTimeDiv">
+                  <div class="col-4 bkTimeSubDiv">
+                    <h4 class="bkLabel">Time: </h4>
+                  </div>
+                  <div class="col-8 bkTimeSubDiv">
+                    <p id="bktimeChoiceID">10AM</p>
+                  </div>
+                </div>
+                <div class="row bkPassengersDiv">
+                  <div class="col-4 bkPassengersSubDiv">
+                    <h4 class="bkLabel">Number of Passengers: </h4>
+                  </div>
+                  <div class="col-8 bkPassengersSubDiv">
+                    <p id="bkPassengersID">2</p>
+                  </div>
+                </div>
+                <div class="row bkBoatSelectedDiv">
+                  <div class="col-4 bkBoatSelectedSubDiv">
+                    <h4 class="bkLabel">Boat Selected: </h4>
+                  </div>
+                  <div class="col-8 bkBoatSelectedSubDiv">
+                    <p id="bkBoatID">Tere</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="seatAllDiv bkSubDiv">
+              <div class="seatTitleSubDiv">
+                <h2 class="seatitleText bookingSumSubTitle">Seat Selection</h2>
+              </div>
+              <div class="seatAllInfoSubDiv container">
+                <div class="row bkDTripDiv">
+                  <!--start of dummy row-->
+                  <div class="col-1 bkSeatNoSubDiv">
+                    <h4 class="bkLabel">Seat: </h4>
+                  </div>
+                  <div class="col-8 bkSeatNoSubDiv">
+                    <p id="bkSeatID">A3</p>
+                  </div>
+                  <div class="col-1 bkSeatPriceSubDiv">
+                    <h4 class="bkLabel">Price: </h4>
+                  </div>
+                  <div class="col-2 bkSeatPriceSubDiv">
+                    <p id="bkSeatPriceID">$ 30.00</p>
+                  </div>
+                  <!--end of dummy row-->
+                </div>
+              </div>
+            </div>
+            <div class="totalPartDiv  totalSeatDiv">
+              <div class="container d-flex totalSeatSubDiv">
+                <div class="totalSeatTitleDiv ">
+                  <h4 class="bkLabel">Total Seats Cost: </h4>
+                </div>
+                <div class="totalSeatCostDiv">
+                  <p id="totalSeatID">$ 60.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="mealAllInfoSubDiv container">
+              <div class="mealTitleSubDiv">
+                <h2 class="mealtitleText bookingSumSubTitle">Meal Selection</h2>
+              </div>
+              <div class="container bkMealMainDiv">
+                <div class="row bkMealDiv">
+                  <!--start of dummy row-->
+                  <div class="col-1 bkMealSubDiv">
+                    <h4 class="bkLabel">Item: </h4>
+                  </div>
+                  <div class="col-3 bkMealSubDiv">
+                    <p id="bkFoodNameID">Chicken Sandwich</p>
+                  </div>
+                  <div class="col-2 bkFoodQtySubDiv">
+                    <p id="bkFoodQtyID">Qty: 1</p>
+                  </div>
+                  <div class="col-6 bkFoodPriceSubDiv">
+                    <p id="bkFoodPriceID">Price: $ 3.00</p>
+                  </div>
+                  <!--end of dummy row-->
+                </div>
+              </div>
+            </div>
+            <div class="totalPartDiv  totalMealDiv">
+              <div class="container d-flex totalMealSubDiv">
+                <div class="totalMealTitleDiv ">
+                  <h4 class="bkLabel">Total Meal Cost: </h4>
+                </div>
+                <div class="totalMealCostDiv">
+                  <p id="totalMealID">$ 3.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="totalPartDiv  totalAllCostDiv">
+              <div class="container d-flex totalAllCostSubDiv">
+                <div class="totalCostTitleDiv ">
+                  <h4 class="bkLabel totalAllLabel">Total Booking Cost: </h4>
+                </div>
+                <div class="totalBookingCostDiv">
+                  <p id="totalAllID">$ 60.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="paymentInfoDiv container">
+              <div class="paymentSubDiv">
+                <h2 class="paymentTitleText bookingSumSubTitle">Payment Information</h2>
+              </div>
+               <div class="paymentInfoDetailsDiv">
+                <p>Free Cancellation 1 month before trip.</p>
+                <p>Payment on the day.</p>
+               </div> 
+              </div>
+              <div class="disclaimerDiv container">
+                <div class="disclaimerSubDiv">
+                  <h2 class="disclaimerTitleText bookingSumSubTitle">Disclaimer</h2>
+                </div>
+                 <div class="disclaimerDetailsDiv">
+                  <p>Trip subject to weather conditions.</p>
+                  <p>Will be contacted if changes arise.</p>
+                  <p>Full refund available if trip cancelled due to weather.</p>
+                 </div> 
+                </div>
+                <div class="termsDiv termsNoteDiv">
+                  <input id="termsID" type="checkbox">
+                  <label for="termsID">I would like free sunscreen</label>
+                </div>
+                <div class="termsDiv hatNoteDiv">
+                  <input id="hatID" type="checkbox">
+                  <label for="hatID">I would like complimentary hats</label>
+                </div>
+            </div>
+          </div>
+          <div class="buttonsDiv buttonsDivMenuPg d-flex justify-content-between">
+            <div class="btnPrevDiv">
+              <button class="button" id="btnPrevPg6">Previous</button>
+            </div>
+            <div class="btnNextDiv">
+              <button class="button" id="btnNextPg6">Next</button>
+            </div>
+          </div>
+        </section>
+        <section class="successContainer d-none bookingPg subSec">
+          <div class="progress">
+            <div
+              class="progress-bar endProgress"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 100%"
+            >
+            </div>
+          </div>
+          <div class="endContentDiv" >
+                <div class="checkIconDiv">
+                  <i class="fa-regular fa-square-check checkIcon"></i>
+                </div>
+                <div class="goodbyeDiv">
+                  <h2 class="goodbyeFont">Booking Success</h2>
+                </div>
+                <div class="goodbyeDiv">
+                  <h2 class="goodbyeFont2">
+                   See you on board!
+                  </h2>
+                </div>
+              </div>
+              <div class="btnEndDiv" id="btnEndDiv">
+                <button
+                  type="button"
+                  class="btnNextPrev"
+                 id="btnEndForm"
+                >
+                  Close
+                </button>
+              </div>
+        </section>
+      </section>
+      <section class="d-none sessionHidden" id="sessionID"></section>
+    </section>
+    <script src="js/bookSeat.js"></script>
+    <!--Footer-->
+    <footer class="container-fluid footer">
+      <div class="callMediaDiv container">
+        <div class="callDiv">
+          <div class="container mt-5">
+            <div class="d-flex justify-content-between">
+              <h2 class="callHeading">CALL US</h2>
+              <div class="mediaDiv">
+                <div class="mediaIcon">
+                  <i class="fa-brands fa-facebook"></i
+                  ><i class="fa-brands fa-square-twitter"></i
+                  ><i class="fa-brands fa-square-instagram"></i>
+                </div>
+              </div>
+            </div>
+            <div class="phoneDiv">
+              <h3 class="callHeading">555-823</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div id="emailContact" class="container emailDiv mt-4">
+          <p class="footerText">Email: wtAdventure@gmail.com</p>
+          <p class="footerText">
+            Address: <br />
+            290A Fernhill Road, Sunshine Bay, Queenstown 9300
+          </p>
+        </div>
+      </div>
+      <div class="container d-flex justify-content-end copyRightDiv">
+        <p>wtAdventure Ⓒ 2022</p>
+      </div>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>
